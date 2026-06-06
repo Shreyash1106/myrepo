@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Shreyash Dandekar — Resume | Python & Backend Developer" />
+    <title>Resume — Shreyash Dandekar</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+    <style>
+      /* ── TOKENS ── */
+      :root {
+        --bg:       #050816;
+        --surface:  rgba(15, 23, 42, 0.9);
+        --border:   rgba(255,255,255,0.08);
+        --yellow:   #facc15;
+        --blue:     #3b82f6;
+        --green:    #22c55e;
+        --txt:      #ffffff;
+        --txt-2:    #cbd5e1;
+        --muted:    #94a3b8;
+        --font:     "Inter", system-ui, sans-serif;
+        --display:  "Plus Jakarta Sans", system-ui, sans-serif;
+      }
+
+      *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+      html { font-size: 16px; }
+      body {
+        font-family: var(--font);
+        background: var(--bg);
+        background-image:
+          radial-gradient(ellipse 70% 50% at 15% 5%,  rgba(59,130,246,0.1) 0%, transparent 55%),
+          radial-gradient(ellipse 50% 40% at 85% 95%, rgba(250,204,21,0.08) 0%, transparent 50%);
+        color: var(--txt);
+        min-height: 100vh;
+      }
+      a { color: inherit; text-decoration: none; }
+
+      /* ── TOP BAR ── */
+      .topbar {
+        position: sticky; top: 0; z-index: 100;
+        display: flex; align-items: center; justify-content: space-between;
+        padding: 0.9rem 2rem;
+        background: rgba(5,8,22,0.85);
+        backdrop-filter: blur(20px);
+        border-bottom: 1px solid var(--border);
+      }
+      .topbar__left { display: flex; align-items: center; gap: 1rem; }
+      .topbar__back {
+        display: inline-flex; align-items: center; gap: 0.45rem;
+        padding: 0.55rem 1.1rem; border-radius: 999px;
+        background: rgba(255,255,255,0.06); border: 1px solid var(--border);
+        color: var(--txt-2); font-size: 0.875rem; font-weight: 500;
+        transition: all 0.2s ease; cursor: pointer;
+      }
+      .topbar__back:hover { background: rgba(255,255,255,0.12); color: var(--txt); }
+      .topbar__title {
+        font-family: var(--display); font-weight: 700; font-size: 1rem; color: var(--txt);
+      }
+      .topbar__title span { color: var(--yellow); }
+      .topbar__right { display: flex; align-items: center; gap: 0.75rem; }
+      .btn-download {
+        display: inline-flex; align-items: center; gap: 0.45rem;
+        padding: 0.6rem 1.3rem; border-radius: 999px;
+        background: var(--yellow); color: #050816;
+        font-weight: 700; font-size: 0.875rem; cursor: pointer;
+        transition: all 0.2s ease; border: none; font-family: var(--font);
+      }
+      .btn-download:hover { box-shadow: 0 6px 24px rgba(250,204,21,0.3); transform: translateY(-1px); }
+      .btn-print {
+        display: inline-flex; align-items: center; gap: 0.45rem;
+        padding: 0.6rem 1.1rem; border-radius: 999px;
+        background: rgba(255,255,255,0.06); border: 1px solid var(--border);
+        color: var(--txt-2); font-size: 0.875rem; font-weight: 500;
+        cursor: pointer; transition: all 0.2s ease; font-family: var(--font);
+      }
+      .btn-print:hover { background: rgba(255,255,255,0.12); color: var(--txt); }
+
+      /* ── PAGE WRAPPER ── */
+      .page-wrap {
+        display: flex; justify-content: center; align-items: flex-start;
+        padding: 2.5rem 1.5rem 3rem;
+      }
+
+      /* ── RESUME SHEET ── */
+      .resume {
+        width: 100%; max-width: 860px;
+        background: rgba(10, 16, 38, 0.95);
+        border: 1px solid rgba(255,255,255,0.1);
+        border-radius: 20px;
+        box-shadow: 0 32px 80px rgba(0,0,0,0.6), 0 0 0 1px rgba(59,130,246,0.1);
+        backdrop-filter: blur(24px);
+        overflow: hidden;
+      }
+
+      /* ── RESUME HEADER ── */
+      .r-head {
+        padding: 2.5rem 2.5rem 2rem;
+        background: linear-gradient(135deg, rgba(59,130,246,0.08) 0%, rgba(250,204,21,0.05) 100%);
+        border-bottom: 1px solid var(--border);
+        display: grid; grid-template-columns: 1fr auto;
+        gap: 1.5rem; align-items: start;
+      }
+      .r-head__name {
+        font-family: var(--display); font-size: 2.2rem; font-weight: 800;
+        color: var(--txt); line-height: 1.1; margin-bottom: 0.4rem;
+      }
+      .r-head__name span {
+        background: linear-gradient(135deg, var(--yellow), #f59e0b);
+        -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+      .r-head__role {
+        font-size: 1rem; font-weight: 600; color: var(--blue); margin-bottom: 1rem;
+        letter-spacing: 0.03em;
+      }
+      .r-head__contacts { display: flex; flex-wrap: wrap; gap: 0.6rem; }
+      .r-contact {
+        display: inline-flex; align-items: center; gap: 0.35rem;
+        font-size: 0.8rem; color: var(--txt-2);
+        padding: 0.3rem 0.75rem; border-radius: 999px;
+        background: rgba(255,255,255,0.05); border: 1px solid var(--border);
+      }
+      .r-contact i { color: var(--yellow); font-size: 0.9rem; }
+      .r-contact a { color: inherit; }
+      .r-head__right { text-align: right; }
+      .r-status {
+        display: inline-flex; align-items: center; gap: 0.4rem;
+        padding: 0.35rem 0.9rem; border-radius: 999px;
+        background: rgba(34,197,94,0.12); border: 1px solid rgba(34,197,94,0.25);
+        color: var(--green); font-size: 0.78rem; font-weight: 600;
+      }
+      .pulse { width: 6px; height: 6px; border-radius: 50%; background: var(--green); animation: pulse 2s ease infinite; }
+      @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.6;transform:scale(1.5)} }
+
+      /* ── RESUME BODY ── */
+      .r-body {
+        display: grid; grid-template-columns: 1fr 2fr;
+        gap: 0;
+      }
+
+      /* ── LEFT COLUMN ── */
+      .r-left {
+        padding: 2rem 1.75rem;
+        border-right: 1px solid var(--border);
+        display: flex; flex-direction: column; gap: 1.75rem;
+      }
+
+      /* ── RIGHT COLUMN ── */
+      .r-right {
+        padding: 2rem 2rem 2rem 2rem;
+        display: flex; flex-direction: column; gap: 1.75rem;
+      }
+
+      /* ── SECTION ── */
+      .r-section__title {
+        font-family: var(--display); font-size: 0.72rem; font-weight: 700;
+        text-transform: uppercase; letter-spacing: 0.12em;
+        color: var(--yellow); margin-bottom: 0.85rem;
+        display: flex; align-items: center; gap: 0.5rem;
+      }
+      .r-section__title::after {
+        content: ""; flex: 1; height: 1px;
+        background: linear-gradient(90deg, rgba(250,204,21,0.3), transparent);
+      }
+
+      /* Skills */
+      .skill-group { margin-bottom: 0.85rem; }
+      .skill-group:last-child { margin-bottom: 0; }
+      .skill-group__label { font-size: 0.75rem; font-weight: 600; color: var(--txt-2); margin-bottom: 0.4rem; }
+      .skill-chips { display: flex; flex-wrap: wrap; gap: 0.35rem; }
+      .chip {
+        padding: 0.2rem 0.6rem; border-radius: 999px;
+        font-size: 0.72rem; font-weight: 500;
+        background: rgba(59,130,246,0.1); border: 1px solid rgba(59,130,246,0.2);
+        color: #93c5fd;
+      }
+      .chip--yellow { background: rgba(250,204,21,0.1); border-color: rgba(250,204,21,0.2); color: #fde68a; }
+
+      /* Education */
+      .edu-item { margin-bottom: 0.75rem; }
+      .edu-item:last-child { margin-bottom: 0; }
+      .edu-item__degree { font-size: 0.85rem; font-weight: 700; color: var(--txt); margin-bottom: 0.15rem; }
+      .edu-item__school { font-size: 0.8rem; color: var(--blue); font-weight: 600; margin-bottom: 0.1rem; }
+      .edu-item__year { font-size: 0.75rem; color: var(--muted); }
+
+      /* Certifications */
+      .cert-item {
+        display: flex; align-items: flex-start; gap: 0.5rem;
+        margin-bottom: 0.6rem; font-size: 0.8rem;
+      }
+      .cert-item:last-child { margin-bottom: 0; }
+      .cert-item i { color: var(--green); font-size: 0.9rem; flex-shrink: 0; margin-top: 1px; }
+      .cert-item__name { color: var(--txt-2); line-height: 1.4; }
+      .cert-item__issuer { color: var(--muted); font-size: 0.72rem; }
+
+      /* Contact (left) */
+      .contact-item {
+        display: flex; align-items: center; gap: 0.6rem;
+        font-size: 0.8rem; color: var(--txt-2); margin-bottom: 0.55rem;
+      }
+      .contact-item:last-child { margin-bottom: 0; }
+      .contact-item i { color: var(--yellow); font-size: 1rem; flex-shrink: 0; width: 16px; }
+      .contact-item a { color: var(--txt-2); }
+      .contact-item a:hover { color: var(--blue); }
+
+      /* Experience */
+      .exp-item { margin-bottom: 1.25rem; }
+      .exp-item:last-child { margin-bottom: 0; }
+      .exp-item__header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.2rem; gap: 0.5rem; }
+      .exp-item__company { font-family: var(--display); font-size: 0.97rem; font-weight: 700; color: var(--txt); }
+      .exp-item__period {
+        font-size: 0.72rem; color: var(--muted); white-space: nowrap;
+        padding: 0.2rem 0.6rem; border-radius: 999px;
+        background: rgba(255,255,255,0.05); border: 1px solid var(--border);
+      }
+      .exp-item__role { font-size: 0.82rem; font-weight: 600; color: var(--blue); margin-bottom: 0.6rem; }
+      .exp-item__list { display: grid; gap: 0.35rem; }
+      .exp-item__list li {
+        display: flex; gap: 0.5rem; align-items: flex-start;
+        font-size: 0.8rem; color: var(--txt-2); line-height: 1.55;
+      }
+      .exp-item__list li::before { content: "›"; color: var(--yellow); font-weight: 700; flex-shrink: 0; }
+      .exp-item__tags { display: flex; flex-wrap: wrap; gap: 0.3rem; margin-top: 0.6rem; }
+      .exp-item__tags span {
+        padding: 0.15rem 0.55rem; border-radius: 999px;
+        font-size: 0.68rem; font-weight: 500;
+        background: rgba(59,130,246,0.08); border: 1px solid rgba(59,130,246,0.18);
+        color: #93c5fd;
+      }
+
+      /* Projects */
+      .proj-item { margin-bottom: 1.1rem; }
+      .proj-item:last-child { margin-bottom: 0; }
+      .proj-item__header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.15rem; gap: 0.5rem; }
+      .proj-item__name { font-size: 0.9rem; font-weight: 700; color: var(--txt); }
+      .proj-badge {
+        font-size: 0.65rem; font-weight: 700; padding: 0.15rem 0.55rem;
+        border-radius: 999px;
+        background: rgba(34,197,94,0.1); border: 1px solid rgba(34,197,94,0.25);
+        color: var(--green); white-space: nowrap;
+      }
+      .proj-item__desc { font-size: 0.78rem; color: var(--txt-2); line-height: 1.55; margin-bottom: 0.45rem; }
+      .proj-item__tags { display: flex; flex-wrap: wrap; gap: 0.3rem; }
+      .proj-item__tags span {
+        padding: 0.15rem 0.55rem; border-radius: 999px; font-size: 0.68rem; font-weight: 500;
+        background: rgba(255,255,255,0.05); border: 1px solid var(--border);
+        color: var(--muted);
+      }
+
+      /* ── PRINT STYLES ── */
+      @media print {
+        body { background: #fff !important; }
+        .topbar { display: none !important; }
+        .page-wrap { padding: 0 !important; }
+        .resume {
+          border-radius: 0 !important; box-shadow: none !important;
+          border: none !important; max-width: 100% !important;
+          background: #fff !important;
+        }
+        .r-head { background: #f8fafc !important; }
+        .r-head__name { color: #0f172a !important; }
+        .r-head__name span { -webkit-text-fill-color: #f59e0b !important; }
+        .r-head__role { color: #2563eb !important; }
+        .r-contact { background: #f1f5f9 !important; border-color: #e2e8f0 !important; color: #475569 !important; }
+        .r-left { background: #f8fafc !important; }
+        .r-section__title { color: #b45309 !important; }
+        .chip { background: #dbeafe !important; border-color: #bfdbfe !important; color: #1d4ed8 !important; }
+        .chip--yellow { background: #fef9c3 !important; border-color: #fde68a !important; color: #92400e !important; }
+        .exp-item__company, .proj-item__name { color: #0f172a !important; }
+        .exp-item__role { color: #2563eb !important; }
+        .exp-item__list li, .proj-item__desc { color: #334155 !important; }
+        .exp-item__period { background: #f1f5f9 !important; color: #64748b !important; }
+        .edu-item__degree { color: #0f172a !important; }
+        .edu-item__school { color: #2563eb !important; }
+        .contact-item { color: #334155 !important; }
+        .cert-item__name { color: #334155 !important; }
+      }
+
+      /* ── RESPONSIVE ── */
+      @media (max-width: 680px) {
+        .topbar { padding: 0.75rem 1rem; }
+        .topbar__title { display: none; }
+        .btn-print { display: none; }
+        .page-wrap { padding: 1rem 0.75rem 2rem; }
+        .r-head { grid-template-columns: 1fr; gap: 1rem; padding: 1.5rem; }
+        .r-head__right { text-align: left; }
+        .r-head__name { font-size: 1.6rem; }
+        .r-body { grid-template-columns: 1fr; }
+        .r-left { border-right: none; border-bottom: 1px solid var(--border); padding: 1.5rem; }
+        .r-right { padding: 1.5rem; }
+      }
+    </style>
+  </head>
+  <body>
+
+    <!-- TOP BAR -->
+    <div class="topbar">
+      <div class="topbar__left">
+        <a href="index.html" class="topbar__back">
+          <i class="bx bx-arrow-back"></i> Portfolio
+        </a>
+        <span class="topbar__title">Shreyash <span>Dandekar</span> — Resume</span>
+      </div>
+      <div class="topbar__right">
+        <button class="btn-print" onclick="window.print()">
+          <i class="bx bx-printer"></i> Print
+        </button>
+        <a href="assets/ShreyashDandekar_Resume.pdf" download="ShreyashDandekar_Resume.pdf" class="btn-download" aria-label="Download Resume PDF" onclick="downloadResume(event)">
+          <i class="bx bx-download"></i> Download PDF
+        </a>
+      </div>
+    </div>
+
+    <!-- RESUME PAGE -->
+    <div class="page-wrap">
+      <div class="resume">
+
+        <!-- HEADER -->
+        <div class="r-head">
+          <div class="r-head__left">
+            <h1 class="r-head__name">Shreyash <span>Dandekar</span></h1>
+            <p class="r-head__role">Python Developer · Backend Developer</p>
+            <div class="r-head__contacts">
+              <span class="r-contact"><i class="bx bx-envelope"></i><a href="mailto:shreyashd429@gmail.com">shreyashd429@gmail.com</a></span>
+              <span class="r-contact"><i class="bx bx-phone"></i><a href="tel:+917498539668">+91 74985 39668</a></span>
+              <span class="r-contact"><i class="bx bx-map-pin"></i>Maharashtra, India</span>
+              <span class="r-contact"><i class="bx bxl-linkedin"></i><a href="https://www.linkedin.com/in/shreyash-dandekar-19387a321" target="_blank">linkedin.com/in/shreyash-dandekar</a></span>
+              <span class="r-contact"><i class="bx bxl-github"></i><a href="https://github.com/Shreyash1106" target="_blank">github.com/Shreyash1106</a></span>
+            </div>
+          </div>
+          <div class="r-head__right">
+            <span class="r-status">
+              <span class="pulse"></span> Open to Work
+            </span>
+          </div>
+        </div>
+
+        <!-- BODY -->
+        <div class="r-body">
+
+          <!-- LEFT COLUMN -->
+          <div class="r-left">
+
+            <!-- Skills -->
+            <div>
+              <p class="r-section__title">Skills</p>
+              <div class="skill-group">
+                <p class="skill-group__label">Programming</p>
+                <div class="skill-chips">
+                  <span class="chip chip--yellow">Python</span>
+                  <span class="chip">JavaScript</span>
+                  <span class="chip">SQL</span>
+                </div>
+              </div>
+              <div class="skill-group">
+                <p class="skill-group__label">Backend</p>
+                <div class="skill-chips">
+                  <span class="chip chip--yellow">FastAPI</span>
+                  <span class="chip chip--yellow">Flask</span>
+                  <span class="chip">Node.js</span>
+                  <span class="chip">Fastify</span>
+                  <span class="chip">REST APIs</span>
+                </div>
+              </div>
+              <div class="skill-group">
+                <p class="skill-group__label">Databases</p>
+                <div class="skill-chips">
+                  <span class="chip chip--yellow">PostgreSQL</span>
+                  <span class="chip chip--yellow">MySQL</span>
+                </div>
+              </div>
+              <div class="skill-group">
+                <p class="skill-group__label">Authentication</p>
+                <div class="skill-chips">
+                  <span class="chip">JWT</span>
+                  <span class="chip">RBAC</span>
+                </div>
+              </div>
+              <div class="skill-group">
+                <p class="skill-group__label">Data Libraries</p>
+                <div class="skill-chips">
+                  <span class="chip">Pandas</span>
+                  <span class="chip">NumPy</span>
+                  <span class="chip">Matplotlib</span>
+                  <span class="chip">Seaborn</span>
+                </div>
+              </div>
+              <div class="skill-group">
+                <p class="skill-group__label">Tools</p>
+                <div class="skill-chips">
+                  <span class="chip">Git</span>
+                  <span class="chip">GitHub</span>
+                  <span class="chip">Docker</span>
+                  <span class="chip">Postman</span>
+                  <span class="chip">VS Code</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Education -->
+            <div>
+              <p class="r-section__title">Education</p>
+              <div class="edu-item">
+                <p class="edu-item__degree">Bachelor of Computer Applications</p>
+                <p class="edu-item__school">University of Mysore</p>
+                <p class="edu-item__year">2024 – Present</p>
+              </div>
+            </div>
+
+            <!-- Certifications -->
+            <div>
+              <p class="r-section__title">Certifications</p>
+              <div class="cert-item">
+                <i class="bx bx-check-circle"></i>
+                <div>
+                  <p class="cert-item__name">SQL and Relational Databases</p>
+                  <p class="cert-item__issuer">IBM</p>
+                </div>
+              </div>
+              <div class="cert-item">
+                <i class="bx bx-check-circle"></i>
+                <div>
+                  <p class="cert-item__name">Python Basic</p>
+                  <p class="cert-item__issuer">HackerRank</p>
+                </div>
+              </div>
+              <div class="cert-item">
+                <i class="bx bx-check-circle"></i>
+                <div>
+                  <p class="cert-item__name">Node.js Intermediate</p>
+                  <p class="cert-item__issuer">HackerRank</p>
+                </div>
+              </div>
+              <div class="cert-item">
+                <i class="bx bx-check-circle"></i>
+                <div>
+                  <p class="cert-item__name">SQL Basic</p>
+                  <p class="cert-item__issuer">HackerRank</p>
+                </div>
+              </div>
+              <div class="cert-item">
+                <i class="bx bx-check-circle"></i>
+                <div>
+                  <p class="cert-item__name">Python Basics</p>
+                  <p class="cert-item__issuer">Udemy</p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- RIGHT COLUMN -->
+          <div class="r-right">
+
+            <!-- Summary -->
+            <div>
+              <p class="r-section__title">Profile</p>
+              <p style="font-size:0.85rem; color:var(--txt-2); line-height:1.7;">
+                Python Backend Developer with hands-on experience in developing REST APIs, authentication systems, and database-driven applications using FastAPI, Flask, Node.js, PostgreSQL, and MySQL. Experienced in backend business logic implementation, API integration, and database management through real-world client projects. Passionate about building scalable, secure, and maintainable software solutions.
+              </p>
+            </div>
+
+            <!-- Experience -->
+            <div>
+              <p class="r-section__title">Experience</p>
+              <div class="exp-item">
+                <div class="exp-item__header">
+                  <span class="exp-item__company">The Baap Company</span>
+                  <span class="exp-item__period">Aug 2024 – Present</span>
+                </div>
+                <p class="exp-item__role">Backend Development Intern</p>
+                <ul class="exp-item__list">
+                  <li>Worked on real-world client projects including Sangamner AI and SJS Hospital</li>
+                  <li>Developed and integrated REST APIs using Python-based frameworks</li>
+                  <li>Implemented authentication and authorization workflows</li>
+                  <li>Managed PostgreSQL and MySQL database operations</li>
+                  <li>Contributed to backend business logic implementation</li>
+                  <li>Collaborated with development teams to deliver production-ready features</li>
+                  <li>Participated in debugging, testing, and application optimization</li>
+                </ul>
+                <div class="exp-item__tags">
+                  <span>Python</span><span>FastAPI</span><span>Flask</span>
+                  <span>PostgreSQL</span><span>MySQL</span><span>JWT</span><span>REST APIs</span><span>Git</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Client Projects -->
+            <div>
+              <p class="r-section__title">Client Projects</p>
+              <div class="proj-item">
+                <div class="proj-item__header">
+                  <span class="proj-item__name">Sangamner AI</span>
+                  <span class="proj-badge" style="background:rgba(59,130,246,0.1);border-color:rgba(59,130,246,0.25);color:#3b82f6;">Client Project</span>
+                </div>
+                <p class="proj-item__desc">Backend Development · REST API Integration · Authentication Systems · Database Management · Business Logic</p>
+                <div class="proj-item__tags">
+                  <span>Python</span><span>FastAPI</span><span>PostgreSQL</span><span>JWT Auth</span><span>REST APIs</span>
+                </div>
+              </div>
+              <div class="proj-item">
+                <div class="proj-item__header">
+                  <span class="proj-item__name">SJS Hospital</span>
+                  <span class="proj-badge" style="background:rgba(59,130,246,0.1);border-color:rgba(59,130,246,0.25);color:#3b82f6;">Client Project</span>
+                </div>
+                <p class="proj-item__desc">Backend Development · API Integration · Authentication Systems · Database Operations · Business Logic</p>
+                <div class="proj-item__tags">
+                  <span>Python</span><span>FastAPI</span><span>PostgreSQL</span><span>JWT Auth</span><span>REST APIs</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Projects -->
+            <div>
+              <p class="r-section__title">Projects</p>
+              <div class="proj-item">
+                <div class="proj-item__header">
+                  <span class="proj-item__name">Leave Management System</span>
+                  <span class="proj-badge" style="background:rgba(250,204,21,0.1);border-color:rgba(250,204,21,0.25);color:#facc15;">Academic</span>
+                </div>
+                <p class="proj-item__desc">
+                  Developed a role-based leave management application. Implemented login, registration, CRUD operations, and user management features. Integrated database functionality and access control mechanisms.
+                </p>
+                <div class="proj-item__tags">
+                  <span>Python</span><span>Role-Based Access</span><span>Database</span><span>Auth</span>
+                </div>
+              </div>
+              <div class="proj-item">
+                <div class="proj-item__header">
+                  <span class="proj-item__name">Interview Bot</span>
+                  <span class="proj-badge" style="background:rgba(250,204,21,0.1);border-color:rgba(250,204,21,0.25);color:#facc15;">Project</span>
+                </div>
+                <p class="proj-item__desc">
+                  Built a backend-driven interview management system. Implemented question management, answer storage, and user authentication.
+                </p>
+                <div class="proj-item__tags">
+                  <span>Python</span><span>Backend</span><span>Authentication</span><span>Database</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+        <!-- end r-body -->
+
+      </div>
+      <!-- end .resume -->
+    </div>
+
+  <div id="toast" class="form-status success" style="display:none; position:fixed; top:20px; right:20px; z-index:1000; min-width:200px; text-align:center;">
+    Resume download started
+  </div>
+<script>
+  function downloadResume(event) {
+    // Prevent default anchor navigation
+    event.preventDefault();
+    const link = event.currentTarget;
+    const href = link.getAttribute('href');
+    const filename = link.getAttribute('download') || 'resume.pdf';
+    // Trigger download programmatically
+    const a = document.createElement('a');
+    a.href = href;
+    a.download = filename;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    // Show toast notification
+    const toast = document.getElementById('toast');
+    if (toast) {
+      toast.style.display = 'block';
+      // Hide after 3 seconds
+      setTimeout(() => {
+        toast.style.display = 'none';
+      }, 3000);
+    }
+  }
+</script>
+</body>
+</html>

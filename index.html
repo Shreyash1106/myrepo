@@ -1,211 +1,854 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Shreyash Dandekar — Python Developer & Backend Developer. FastAPI, Flask, REST APIs, PostgreSQL. Backend Intern at The Baap Company." />
+    <meta name="keywords" content="Python Developer, Backend Developer, FastAPI, Flask, REST API, PostgreSQL, MySQL, Shreyash Dandekar" />
+    <meta name="author" content="Shreyash Dandekar" />
+    <meta name="robots" content="index, follow" />
+    <meta property="og:title" content="Shreyash Dandekar | Python & Backend Developer" />
+    <meta property="og:description" content="Backend Developer with client project experience — Sangamner AI & SJS Hospital." />
+    <meta property="og:type" content="website" />
+    <title>Shreyash Dandekar | Python & Backend Developer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="assets/css/styles.css" />
+  </head>
+  <body>
 
-        <link rel="stylesheet" href="assets/css/styles.css">
+    <!-- PRELOADER -->
+    <div class="preloader" id="preloader">
+      <div class="preloader__inner">
+        <div class="preloader__ring"></div>
+        <span class="preloader__name">SD</span>
+      </div>
+    </div>
 
-        <!-- =====BOX ICONS===== -->
-        <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
+    <!-- SCROLL PROGRESS -->
+    <div class="scroll-progress" id="scroll-progress"></div>
 
-        <title>Portfolio website complete</title>
-    </head>
-    <body>
-        <!--===== HEADER =====-->
-        <header class="l-header">
-            <nav class="nav bd-grid">
-                <div>
-                    <a href="#" class="nav__logo">Shreyash</a>
-                </div>
-                
+    <!-- HEADER -->
+    <header class="l-header" id="header">
+      <nav class="nav bd-grid">
+        <a href="#home" class="nav__logo">
+          <span class="nav__logo-mark">S</span>
+          <span class="nav__logo-text">Shreyash<span>.</span></span>
+        </a>
+        <div class="nav__menu" id="nav-menu">
+          <ul class="nav__list">
+            <li><a href="#home"           class="nav__link active-link">Home</a></li>
+            <li><a href="#about"          class="nav__link">About</a></li>
+            <li><a href="#experience"     class="nav__link">Experience</a></li>
+            <li><a href="#projects"       class="nav__link">Projects</a></li>
+            <li><a href="#skills"         class="nav__link">Skills</a></li>
+            <li><a href="#certifications" class="nav__link">Certifications</a></li>
+            <li><a href="#contact"        class="nav__link">Contact</a></li>
+          </ul>
+          <a href="resume.html" target="_blank" class="btn btn--outline btn--sm">
+            <i class="bx bx-file"></i> Resume
+          </a>
+        </div>
+        <button class="nav__toggle" id="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </nav>
+    </header>
 
-                <div class="nav__menu" id="nav-menu">
-                    <ul class="nav__list">
-                        <li class="nav__item"><a href="#home" class="nav__link active-link">Home</a></li>
-                        <li class="nav__item"><a href="#about" class="nav__link">About</a></li>
-                        <li class="nav__item"><a href="#skills" class="nav__link">Skills</a></li>
-                        <li class="nav__item"><a href="#work" class="nav__link">Work</a></li>
-                        <li class="nav__item"><a href="#contact" class="nav__link">Contact</a></li>
-                    </ul>
-                </div>
+    <main>
 
-                <div class="nav__toggle" id="nav-toggle">
-                    <i class='bx bx-menu'></i>
-                </div>
-            </nav>
-        </header>
+      <!-- ═══════════════════════════ HERO ═══════════════════════════ -->
+      <section class="hero" id="home">
+        <div class="hero__glow hero__glow--blue"></div>
+        <div class="hero__glow hero__glow--yellow"></div>
 
-        <main class="l-main">
-            <!--===== HOME =====-->
-            <section class="home bd-grid" id="home">
-                <div class="home__data">
-                    <h1 class="home__title">Hi,<br>I'am <span class="home__title-color">Shreyash</span><br>Python Devloper</h1>
-
-                    <a href="#" class="button">Contact</a>
-                </div>
-
-                <div class="home__social">
-                    <a href="" class="home__social-icon"><i class='bx bxl-linkedin'></i></a>
-                    <a href="" class="home__social-icon"><i class='bx bxl-behance' ></i></a>
-                    <a href="" class="home__social-icon"><i class='bx bxl-github' ></i></a>
-                </div>
-
-                <div class="home__img">
-                    <svg class="home__blob" viewBox="0 0 479 467" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                        <mask id="mask0" mask-type="alpha">
-                            <path d="M9.19024 145.964C34.0253 76.5814 114.865 54.7299 184.111 29.4823C245.804 6.98884 311.86 -14.9503 370.735 14.143C431.207 44.026 467.948 107.508 477.191 174.311C485.897 237.229 454.931 294.377 416.506 344.954C373.74 401.245 326.068 462.801 255.442 466.189C179.416 469.835 111.552 422.137 65.1576 361.805C17.4835 299.81 -17.1617 219.583 9.19024 145.964Z"/>
-                        </mask>
-                        <g mask="url(#mask0)">
-                            <path d="M9.19024 145.964C34.0253 76.5814 114.865 54.7299 184.111 29.4823C245.804 6.98884 311.86 -14.9503 370.735 14.143C431.207 44.026 467.948 107.508 477.191 174.311C485.897 237.229 454.931 294.377 416.506 344.954C373.74 401.245 326.068 462.801 255.442 466.189C179.416 469.835 111.552 422.137 65.1576 361.805C17.4835 299.81 -17.1617 219.583 9.19024 145.964Z"/>
-                            <image class="home__blob-img" x="50" y="60" href="assets/img/20240815_112152_605-removebg-preview.png"/>
-                        </g>
-                    </svg>
-                </div>
-            </section>
-
-            <!--===== ABOUT =====-->
-            <section class="about section " id="about">
-                <h2 class="section-title">About</h2>
-
-                <div class="about__container bd-grid">
-                    <div class="about__img">
-                        <img src="./assets/img/20240815_133659_417.jpg" alt="">
-                    </div>
-                    
-                    <div>
-                        <h2 class="about__subtitle">I'am Shreyash Dandekar</h2>
-                        <p class="about__text">I am a Python Developer passionate about coding and problem-solving.
-                            I enjoy building applications and exploring new technologies.
-                            Currently, I am improving my skills in web development and automation.
-                            I love writing clean and efficient code for better performance.
-                            Always eager to learn and take on new challenges.
-                            Let’s connect and build something great together! </p>           
-                    </div>                                   
-                </div>
-            </section>
-
-            <!--===== SKILLS =====-->
-            <section class="skills section" id="skills">
-                <h2 class="section-title">Skills</h2>
-
-                <div class="skills__container bd-grid">          
-                    <div>
-                        <h2 class="skills__subtitle">Profesional Skills</h2>
-                        <p class="skills__text">I am a Python Developer with expertise in web development, automation, and backend systems. I focus on building efficient and scalable applications using modern technologies.</p>
-                        <div class="skills__data">
-                            <div class="skills__names">
-                                <i class='bx bxl-html5 skills__icon'></i>
-                                <span class="skills__name">HTML5</span>
-                            </div>
-                            <div class="skills__bar skills__html">
-
-                            </div>
-                            <div>
-                                <span class="skills__percentage">95%</span>
-                            </div>
-                        </div>
-                        <div class="skills__data">
-                            <div class="skills__names">
-                                <i class='bx bxl-css3 skills__icon'></i>
-                                <span class="skills__name">CSS3</span>
-                            </div>
-                            <div class="skills__bar skills__css">
-                                
-                            </div>
-                            <div>
-                                <span class="skills__percentage">85%</span>
-                            </div>
-                        </div>
-                        <div class="skills__data">
-                            <div class="skills__names">
-                                <i class='bx bxl-javascript skills__icon' ></i>
-                                <span class="skills__name">JAVASCRIPT</span>
-                            </div>
-                            <div class="skills__bar skills__js">
-                                
-                            </div>
-                            <div>
-                                <span class="skills__percentage">65%</span>
-                            </div>
-                        </div>
-                        <div class="skills__data">
-                            <div class="skills__names">
-                                <i class='bx bxs-paint skills__icon'></i>
-                                <span class="skills__name">UX/UI</span>
-                            </div>
-                            <div class="skills__bar skills__ux">
-                                
-                            </div>
-                            <div>
-                                <span class="skills__percentage">85%</span>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div>              
-                        <img src="" alt="" class="skills__img">
-                    </div>
-                </div>
-            </section>
-
-            <!--===== WORK =====-->
-            <section class="work section" id="work">
-                <h2 class="section-title">Work</h2>
-
-                <div class="work__container bd-grid">
-                    <a href="" class="work__img">
-                        <img src="assets/img/work1.jpg" alt="">
-                    </a>
-                    <a href="" class="work__img">
-                        <img src="assets/img/work2.jpg" alt="">
-                    </a>
-                    <a href="" class="work__img">
-                        <img src="assets/img/work3.jpg" alt="">
-                    </a>
-                    <a href="" class="work__img">
-                        <img src="assets/img/work4.jpg" alt="">
-                    </a>
-                    <a href="" class="work__img">
-                        <img src="assets/img/work5.jpg" alt="">
-                    </a>
-                    <a href="" class="work__img">
-                        <img src="assets/img/work6.jpg" alt="">
-                    </a>
-                </div>
-            </section>
-
-            <!--===== CONTACT =====-->
-            <section class="contact section" id="contact">
-                <h2 class="section-title">Contact</h2>
-
-                <div class="contact__container bd-grid">
-                    <form action="" class="contact__form">
-                        <input type="text" placeholder="Name" class="contact__input">
-                        <input type="mail" placeholder="Email" class="contact__input">
-                        <textarea name="" id="" cols="0" rows="10" class="contact__input"></textarea>
-                        <input type="button" value="Enviar" class="contact__button button">
-                    </form>
-                </div>
-            </section>
-        </main>
-
-        <!--===== FOOTER =====-->
-        <footer class="footer">
-            <p class="footer__title">Shreyash</p>
-            <div class="footer__social">
-                <a href="#" class="footer__icon"><i class='bx bxl-facebook' ></i></a>
-                <a href="#" class="footer__icon"><i class='bx bxl-instagram' ></i></a>
-                <a href="#" class="footer__icon"><i class='bx bxl-twitter' ></i></a>
+        <div class="hero__inner bd-grid">
+          <div class="hero__content" data-reveal="left">
+            <div class="hero__available">
+              <span class="pulse-dot"></span>
+              Available for Opportunities
             </div>
-            <p class="footer__copy">&#169; copyright. All rigths reserved</p>
-        </footer>
 
+            <p class="hero__eyebrow">Python Developer · Backend Developer</p>
 
-        <!--===== SCROLL REVEAL =====-->
-        <script src="https://unpkg.com/scrollreveal"></script>
+            <h1 class="hero__title">
+              Shreyash<br />
+              <span class="hero__title-accent">Dandekar</span>
+            </h1>
 
-        <!--===== MAIN JS =====-->
-        <script src="assets/js/main.js"></script>
-    </body>
+            <p class="hero__tagline">
+              Building scalable backend systems, REST APIs, and database-driven applications using Python and modern backend technologies.
+            </p>
+
+            <p class="hero__subheading">
+              Backend Development Intern at <strong>The Baap Company</strong> with hands-on experience on client projects — <strong>Sangamner AI</strong> and <strong>SJS Hospital</strong>.
+            </p>
+
+            <div class="hero__actions">
+              <a href="assets/ShreyashDandekar_Resume.pdf" download="Shreyash_Dandekar_Resume" class="btn btn--primary">
+                <i class="bx bx-download"></i> Download Resume
+              </a>
+              <a href="https://github.com/Shreyash1106" target="_blank" rel="noreferrer" class="btn btn--secondary">
+                <i class="bx bxl-github"></i> GitHub
+              </a>
+              <a href="https://www.linkedin.com/in/shreyash-dandekar-19387a321" target="_blank" rel="noreferrer" class="btn btn--ghost">
+                <i class="bx bxl-linkedin"></i> LinkedIn
+              </a>
+              <a href="#contact" class="btn btn--ghost">
+                <i class="bx bx-envelope"></i> Contact Me
+              </a>
+            </div>
+          </div>
+
+          <div class="hero__card" data-reveal="right">
+            <div class="profile-card">
+              <div class="profile-card__status">
+                <span class="pulse-dot pulse-dot--sm"></span> Open to Work
+              </div>
+              <div class="profile-card__img-wrap">
+                <img
+                  src="assets/img/20240815_133659_417.jpg"
+                  alt="Shreyash Dandekar — Python Backend Developer"
+                  loading="eager"
+                />
+              </div>
+              <div class="profile-card__info">
+                <h2 class="profile-card__name">Shreyash Dandekar</h2>
+                <p class="profile-card__role">Backend Development Intern</p>
+                <p class="profile-card__company">@ The Baap Company</p>
+              </div>
+              <div class="profile-card__chips">
+                <span><i class="bx bx-map-pin"></i> Maharashtra, India</span>
+                <span><i class="bx bx-phone"></i> +91 74985 39668</span>
+                <span><i class="bx bx-envelope"></i> shreyashd429@gmail.com</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══════════════════════════ ABOUT ═══════════════════════════ -->
+      <section class="section about" id="about">
+        <div class="bd-grid">
+          <div class="section-header" data-reveal="up">
+            <span class="section-label">About Me</span>
+            <h2 class="section-title">Backend Engineer.<br />Real-World Experience.</h2>
+          </div>
+
+          <div class="about__grid">
+            <div class="about__text" data-reveal="left">
+              <p class="about__lead">
+                I'm a Python & Backend Developer working as a <strong>Backend Development Intern at The Baap Company</strong>, building production-grade APIs, managing databases, and implementing secure authentication systems for real client applications.
+              </p>
+              <p class="about__body">
+                Focused on clean API design, reliable database architecture, and maintainable backend code. Currently pursuing a <strong>Bachelor of Computer Applications (BCA)</strong> from the University of Mysore while gaining hands-on professional experience.
+              </p>
+              <div class="about__details">
+                <div class="about__detail-item">
+                  <i class="bx bx-buildings"></i>
+                  <div>
+                    <span>Current Role</span>
+                    <strong>Backend Development Intern — The Baap Company</strong>
+                  </div>
+                </div>
+                <div class="about__detail-item">
+                  <i class="bx bx-graduation"></i>
+                  <div>
+                    <span>Education</span>
+                    <strong>BCA — University of Mysore (2024–Present)</strong>
+                  </div>
+                </div>
+                <div class="about__detail-item">
+                  <i class="bx bx-map-pin"></i>
+                  <div>
+                    <span>Location</span>
+                    <strong>Maharashtra, India · Open to Remote</strong>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="about__strengths" data-reveal="right">
+              <h3 class="about__strengths-title">Core Strengths</h3>
+              <div class="strength-list">
+                <div class="strength-item">
+                  <div class="strength-icon"><i class="bx bx-code-curly"></i></div>
+                  <div>
+                    <strong>REST API Development</strong>
+                    <p>FastAPI, Flask — endpoint design, validation, error handling</p>
+                  </div>
+                </div>
+                <div class="strength-item">
+                  <div class="strength-icon"><i class="bx bx-data"></i></div>
+                  <div>
+                    <strong>Database Engineering</strong>
+                    <p>PostgreSQL, MySQL — schema design, queries, optimization</p>
+                  </div>
+                </div>
+                <div class="strength-item">
+                  <div class="strength-icon"><i class="bx bx-shield-quarter"></i></div>
+                  <div>
+                    <strong>Authentication Systems</strong>
+                    <p>JWT, session management, role-based access control</p>
+                  </div>
+                </div>
+                <div class="strength-item">
+                  <div class="strength-icon"><i class="bx bx-git-branch"></i></div>
+                  <div>
+                    <strong>Team Collaboration</strong>
+                    <p>Git workflows, code reviews, sprint delivery</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══════════════════════════ EXPERIENCE ═══════════════════════════ -->
+      <section class="section experience" id="experience">
+        <div class="bd-grid">
+          <div class="section-header" data-reveal="up">
+            <span class="section-label">Career</span>
+            <h2 class="section-title">Professional Experience</h2>
+          </div>
+
+          <div class="exp-card card" data-reveal="up">
+            <div class="exp-card__left">
+              <div class="exp-card__logo"><i class="bx bx-buildings"></i></div>
+              <div class="exp-card__line"></div>
+            </div>
+            <div class="exp-card__right">
+              <div class="exp-card__top">
+                <div>
+                  <h3 class="exp-card__company">The Baap Company</h3>
+                  <p class="exp-card__role">Backend Development Intern</p>
+                </div>
+                <div class="exp-card__meta">
+                  <span class="badge badge--green">Current</span>
+                  <span class="exp-card__period"><i class="bx bx-calendar"></i> Aug 2024 – Present</span>
+                </div>
+              </div>
+              <ul class="exp-card__list">
+                <li>Worked on real-world client projects including Sangamner AI and SJS Hospital</li>
+                <li>Developed and integrated REST APIs using Python-based frameworks</li>
+                <li>Implemented authentication and authorization workflows</li>
+                <li>Managed PostgreSQL and MySQL database operations</li>
+                <li>Contributed to backend business logic implementation</li>
+                <li>Collaborated with development teams to deliver production-ready features</li>
+                <li>Participated in debugging, testing, and application optimization</li>
+              </ul>
+              <div class="tag-list">
+                <span class="tag">Python</span>
+                <span class="tag">FastAPI</span>
+                <span class="tag">Flask</span>
+                <span class="tag">PostgreSQL</span>
+                <span class="tag">MySQL</span>
+                <span class="tag">REST APIs</span>
+                <span class="tag">JWT Auth</span>
+                <span class="tag">Git</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══════════════════════════ PROJECTS ═══════════════════════════ -->
+      <section class="section projects" id="projects">
+        <div class="bd-grid">
+          <div class="section-header" data-reveal="up">
+            <span class="section-label">Featured Work</span>
+            <h2 class="section-title">Client Projects</h2>
+            <p class="section-sub">Backend systems built for real clients during my internship at The Baap Company.</p>
+          </div>
+
+          <!-- Sangamner AI -->
+          <article class="project-feature card" data-reveal="up">
+            <div class="project-feature__body">
+              <div class="project-feature__header">
+                <div class="project-feature__badges">
+                  <span class="badge badge--blue">Client Project</span>
+                  <span class="badge badge--yellow">Backend</span>
+                </div>
+                <div class="project-feature__icon"><i class="bx bx-brain"></i></div>
+              </div>
+              <h3 class="project-feature__title">Sangamner AI</h3>
+              <p class="project-feature__desc">
+                Worked on backend development for an AI-driven platform. Responsibilities included REST API integration, PostgreSQL database management, authentication systems, and business logic implementation.
+              </p>
+              <div class="project-feature__responsibilities">
+                <h4>Key Contributions</h4>
+                <ul>
+                  <li><i class="bx bx-check"></i> REST API development and integration</li>
+                  <li><i class="bx bx-check"></i> Authentication and authorization systems</li>
+                  <li><i class="bx bx-check"></i> PostgreSQL database management</li>
+                  <li><i class="bx bx-check"></i> Business logic implementation</li>
+                  <li><i class="bx bx-check"></i> Backend debugging and optimization</li>
+                </ul>
+              </div>
+              <div class="tag-list" style="margin-bottom: 1.25rem;">
+                <span class="tag tag--accent">FastAPI</span>
+                <span class="tag tag--accent">Python</span>
+                <span class="tag tag--accent">PostgreSQL</span>
+                <span class="tag">JWT Auth</span>
+                <span class="tag">REST APIs</span>
+              </div>
+              <div class="project-feature__actions">
+                <button class="btn btn--primary btn--sm proj-details-btn" data-proj="sangamner">
+                  <i class="bx bx-info-circle"></i> View Details
+                </button>
+              </div>
+            </div>
+            <div class="project-feature__visual">
+              <div class="project-mock">
+                <div class="project-mock__bar"><span></span><span></span><span></span></div>
+                <div class="project-mock__content">
+                  <div class="mock-line mock-line--title"></div>
+                  <div class="mock-endpoint">
+                    <span class="mock-method mock-method--post">POST</span>
+                    <span class="mock-path">/api/v1/auth/login</span>
+                  </div>
+                  <div class="mock-endpoint">
+                    <span class="mock-method mock-method--get">GET</span>
+                    <span class="mock-path">/api/v1/workflows/list</span>
+                  </div>
+                  <div class="mock-endpoint">
+                    <span class="mock-method mock-method--post">POST</span>
+                    <span class="mock-path">/api/v1/ai/process</span>
+                  </div>
+                  <div class="mock-endpoint">
+                    <span class="mock-method mock-method--put">PUT</span>
+                    <span class="mock-path">/api/v1/users/{id}</span>
+                  </div>
+                  <div class="mock-endpoint">
+                    <span class="mock-method mock-method--get">GET</span>
+                    <span class="mock-path">/api/v1/dashboard/stats</span>
+                  </div>
+                  <div class="mock-line mock-line--code"></div>
+                  <div class="mock-line mock-line--code mock-line--short"></div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- SJS Hospital -->
+          <article class="project-feature project-feature--alt card" data-reveal="up">
+            <div class="project-feature__visual">
+              <div class="project-mock">
+                <div class="project-mock__bar"><span></span><span></span><span></span></div>
+                <div class="project-mock__content">
+                  <div class="mock-line mock-line--title"></div>
+                  <div class="mock-endpoint">
+                    <span class="mock-method mock-method--post">POST</span>
+                    <span class="mock-path">/api/v1/patients/register</span>
+                  </div>
+                  <div class="mock-endpoint">
+                    <span class="mock-method mock-method--get">GET</span>
+                    <span class="mock-path">/api/v1/appointments</span>
+                  </div>
+                  <div class="mock-endpoint">
+                    <span class="mock-method mock-method--post">POST</span>
+                    <span class="mock-path">/api/v1/doctors/schedule</span>
+                  </div>
+                  <div class="mock-endpoint">
+                    <span class="mock-method mock-method--get">GET</span>
+                    <span class="mock-path">/api/v1/records/{patient_id}</span>
+                  </div>
+                  <div class="mock-endpoint">
+                    <span class="mock-method mock-method--put">PUT</span>
+                    <span class="mock-path">/api/v1/billing/update</span>
+                  </div>
+                  <div class="mock-line mock-line--code"></div>
+                  <div class="mock-line mock-line--code mock-line--short"></div>
+                </div>
+              </div>
+            </div>
+            <div class="project-feature__body">
+              <div class="project-feature__header">
+                <div class="project-feature__badges">
+                  <span class="badge badge--blue">Client Project</span>
+                  <span class="badge badge--yellow">Healthcare</span>
+                </div>
+                <div class="project-feature__icon"><i class="bx bx-plus-medical"></i></div>
+              </div>
+              <h3 class="project-feature__title">SJS Hospital</h3>
+              <p class="project-feature__desc">
+                Worked on backend functionality for a hospital management system. Responsibilities included REST API development, authentication systems, PostgreSQL database management, and business logic implementation.
+              </p>
+              <div class="project-feature__responsibilities">
+                <h4>Key Contributions</h4>
+                <ul>
+                  <li><i class="bx bx-check"></i> REST API development for hospital workflows</li>
+                  <li><i class="bx bx-check"></i> Authentication and multi-role authorization</li>
+                  <li><i class="bx bx-check"></i> PostgreSQL schema design and management</li>
+                  <li><i class="bx bx-check"></i> Business logic for appointments and billing</li>
+                  <li><i class="bx bx-check"></i> API integration and testing</li>
+                </ul>
+              </div>
+              <div class="tag-list" style="margin-bottom: 1.25rem;">
+                <span class="tag tag--accent">FastAPI</span>
+                <span class="tag tag--accent">Python</span>
+                <span class="tag tag--accent">PostgreSQL</span>
+                <span class="tag">JWT Auth</span>
+                <span class="tag">REST APIs</span>
+                <span class="tag">RBAC</span>
+              </div>
+              <div class="project-feature__actions">
+                <button class="btn btn--primary btn--sm proj-details-btn" data-proj="sjs">
+                  <i class="bx bx-info-circle"></i> View Details
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Leave Management -->
+          <article class="project-secondary card" data-reveal="up">
+            <div class="project-secondary__header">
+              <div class="project-secondary__icon"><i class="bx bx-calendar-check"></i></div>
+              <span class="badge badge--yellow">Academic</span>
+            </div>
+            <h3 class="project-secondary__title">Leave Management System</h3>
+            <p class="project-secondary__desc">Role-based leave management system with multi-level authentication, approval chain logic, and database persistence for organizational workflow management.</p>
+            <div class="tag-list" style="margin-bottom: 1rem;">
+              <span class="tag">Python</span>
+              <span class="tag">Role-Based Access</span>
+              <span class="tag">Database</span>
+              <span class="tag">Auth Systems</span>
+            </div>
+            <button class="btn btn--secondary btn--sm proj-details-btn" data-proj="leave">
+              <i class="bx bx-info-circle"></i> View Details
+            </button>
+          </article>
+
+          <!-- Interview Bot -->
+          <article class="project-secondary card" data-reveal="up">
+            <div class="project-secondary__header">
+              <div class="project-secondary__icon"><i class="bx bx-bot"></i></div>
+              <span class="badge badge--blue">Project</span>
+            </div>
+            <h3 class="project-secondary__title">Interview Bot</h3>
+            <p class="project-secondary__desc">Backend-driven interview management system with question management, answer storage, and user authentication.</p>
+            <div class="tag-list" style="margin-bottom: 1rem;">
+              <span class="tag">Python</span>
+              <span class="tag">Backend</span>
+              <span class="tag">Authentication</span>
+              <span class="tag">Database</span>
+            </div>
+            <button class="btn btn--secondary btn--sm proj-details-btn" data-proj="interviewbot">
+              <i class="bx bx-info-circle"></i> View Details
+            </button>
+          </article>
+
+        </div>
+      </section>
+
+      <!-- PROJECT MODAL -->
+      <div class="modal-overlay" id="proj-modal" role="dialog" aria-modal="true">
+        <div class="modal-box modal-box--wide">
+          <button class="modal-close" id="proj-modal-close" aria-label="Close"><i class="bx bx-x"></i></button>
+          <div id="proj-modal-content"></div>
+        </div>
+      </div>
+
+      <!-- ═══════════════════════════ SKILLS ═══════════════════════════ -->
+      <section class="section skills" id="skills">
+        <div class="bd-grid">
+          <div class="section-header" data-reveal="up">
+            <span class="section-label">Tech Stack</span>
+            <h2 class="section-title">Technical Skills</h2>
+            <p class="section-sub">Technologies I use to build and ship backend systems.</p>
+          </div>
+
+          <div class="skills__grid">
+
+            <div class="skill-group card" data-reveal="up" style="--d:0.05s">
+              <div class="skill-group__header">
+                <div class="skill-group__icon"><i class="bx bx-code-alt"></i></div>
+                <h3>Programming Languages</h3>
+              </div>
+              <div class="skill-bars">
+                <div class="skill-bar-item">
+                  <div class="skill-bar-item__top"><span>Python</span><span>95%</span></div>
+                  <div class="skill-bar-track"><div class="skill-bar-fill" data-w="95"></div></div>
+                </div>
+                <div class="skill-bar-item">
+                  <div class="skill-bar-item__top"><span>JavaScript</span><span>75%</span></div>
+                  <div class="skill-bar-track"><div class="skill-bar-fill" data-w="75"></div></div>
+                </div>
+                <div class="skill-bar-item">
+                  <div class="skill-bar-item__top"><span>SQL</span><span>88%</span></div>
+                  <div class="skill-bar-track"><div class="skill-bar-fill" data-w="88"></div></div>
+                </div>
+              </div>
+              <div class="skill-chips"><span>Python</span><span>JavaScript</span><span>SQL</span></div>
+            </div>
+
+            <div class="skill-group card" data-reveal="up" style="--d:0.1s">
+              <div class="skill-group__header">
+                <div class="skill-group__icon"><i class="bx bx-server"></i></div>
+                <h3>Backend Frameworks</h3>
+              </div>
+              <div class="skill-bars">
+                <div class="skill-bar-item">
+                  <div class="skill-bar-item__top"><span>FastAPI</span><span>90%</span></div>
+                  <div class="skill-bar-track"><div class="skill-bar-fill" data-w="90"></div></div>
+                </div>
+                <div class="skill-bar-item">
+                  <div class="skill-bar-item__top"><span>Flask</span><span>85%</span></div>
+                  <div class="skill-bar-track"><div class="skill-bar-fill" data-w="85"></div></div>
+                </div>
+                <div class="skill-bar-item">
+                  <div class="skill-bar-item__top"><span>Node.js / Fastify</span><span>72%</span></div>
+                  <div class="skill-bar-track"><div class="skill-bar-fill" data-w="72"></div></div>
+                </div>
+              </div>
+              <div class="skill-chips"><span>FastAPI</span><span>Flask</span><span>Node.js</span><span>Fastify</span><span>REST APIs</span></div>
+            </div>
+
+            <div class="skill-group card" data-reveal="up" style="--d:0.15s">
+              <div class="skill-group__header">
+                <div class="skill-group__icon"><i class="bx bx-data"></i></div>
+                <h3>Databases</h3>
+              </div>
+              <div class="skill-bars">
+                <div class="skill-bar-item">
+                  <div class="skill-bar-item__top"><span>PostgreSQL</span><span>88%</span></div>
+                  <div class="skill-bar-track"><div class="skill-bar-fill" data-w="88"></div></div>
+                </div>
+                <div class="skill-bar-item">
+                  <div class="skill-bar-item__top"><span>MySQL</span><span>83%</span></div>
+                  <div class="skill-bar-track"><div class="skill-bar-fill" data-w="83"></div></div>
+                </div>
+              </div>
+              <div class="skill-chips"><span>PostgreSQL</span><span>MySQL</span><span>Schema Design</span><span>Query Optimization</span></div>
+            </div>
+
+            <div class="skill-group card" data-reveal="up" style="--d:0.2s">
+              <div class="skill-group__header">
+                <div class="skill-group__icon"><i class="bx bx-bar-chart-alt-2"></i></div>
+                <h3>Data Analysis</h3>
+              </div>
+              <div class="skill-bars">
+                <div class="skill-bar-item">
+                  <div class="skill-bar-item__top"><span>Pandas</span><span>78%</span></div>
+                  <div class="skill-bar-track"><div class="skill-bar-fill" data-w="78"></div></div>
+                </div>
+                <div class="skill-bar-item">
+                  <div class="skill-bar-item__top"><span>NumPy</span><span>75%</span></div>
+                  <div class="skill-bar-track"><div class="skill-bar-fill" data-w="75"></div></div>
+                </div>
+                <div class="skill-bar-item">
+                  <div class="skill-bar-item__top"><span>Matplotlib / Seaborn</span><span>70%</span></div>
+                  <div class="skill-bar-track"><div class="skill-bar-fill" data-w="70"></div></div>
+                </div>
+              </div>
+              <div class="skill-chips"><span>Pandas</span><span>NumPy</span><span>Matplotlib</span><span>Seaborn</span></div>
+            </div>
+
+            <div class="skill-group card" data-reveal="up" style="--d:0.25s">
+              <div class="skill-group__header">
+                <div class="skill-group__icon"><i class="bx bx-wrench"></i></div>
+                <h3>Developer Tools</h3>
+              </div>
+              <div class="skill-bars">
+                <div class="skill-bar-item">
+                  <div class="skill-bar-item__top"><span>Git / GitHub</span><span>90%</span></div>
+                  <div class="skill-bar-track"><div class="skill-bar-fill" data-w="90"></div></div>
+                </div>
+                <div class="skill-bar-item">
+                  <div class="skill-bar-item__top"><span>Postman</span><span>85%</span></div>
+                  <div class="skill-bar-track"><div class="skill-bar-fill" data-w="85"></div></div>
+                </div>
+                <div class="skill-bar-item">
+                  <div class="skill-bar-item__top"><span>Docker</span><span>70%</span></div>
+                  <div class="skill-bar-track"><div class="skill-bar-fill" data-w="70"></div></div>
+                </div>
+              </div>
+              <div class="skill-chips"><span>Git</span><span>GitHub</span><span>Docker</span><span>Postman</span><span>VS Code</span></div>
+            </div>
+
+            <div class="skill-group card" data-reveal="up" style="--d:0.28s">
+              <div class="skill-group__header">
+                <div class="skill-group__icon"><i class="bx bx-shield-quarter"></i></div>
+                <h3>Authentication</h3>
+              </div>
+              <div class="skill-bars">
+                <div class="skill-bar-item">
+                  <div class="skill-bar-item__top"><span>JWT</span><span>88%</span></div>
+                  <div class="skill-bar-track"><div class="skill-bar-fill" data-w="88"></div></div>
+                </div>
+                <div class="skill-bar-item">
+                  <div class="skill-bar-item__top"><span>Role-Based Access Control</span><span>82%</span></div>
+                  <div class="skill-bar-track"><div class="skill-bar-fill" data-w="82"></div></div>
+                </div>
+              </div>
+              <div class="skill-chips"><span>JWT</span><span>RBAC</span><span>Session Management</span></div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══════════════════════════ CERTIFICATIONS ═══════════════════════════ -->
+      <section class="section certifications" id="certifications">
+        <div class="bd-grid">
+          <div class="section-header" data-reveal="up">
+            <span class="section-label">Credentials</span>
+            <h2 class="section-title">Certifications</h2>
+            <p class="section-sub">Verified skills from industry-recognized platforms. Click any card to view.</p>
+          </div>
+
+          <div class="cert-grid">
+            <div class="cert-card card" data-reveal="up" style="--d:0.05s"
+              data-cert-title="SQL and Relational Databases"
+              data-cert-issuer="IBM"
+              data-cert-level="Professional"
+              data-cert-verify="https://courses.cognitiveclass.ai/certificates/"
+              data-cert-icon="ibm">
+              <div class="cert-card__icon cert-card__icon--ibm"><i class="bx bx-data"></i></div>
+              <div class="cert-card__body">
+                <span class="cert-card__issuer">IBM</span>
+                <h4>SQL and Relational Databases</h4>
+                <span class="cert-card__level"><i class="bx bx-check-circle"></i> Professional</span>
+              </div>
+              <div class="cert-card__cta"><i class="bx bx-show"></i> View</div>
+            </div>
+
+            <div class="cert-card card" data-reveal="up" style="--d:0.1s"
+              data-cert-title="Python (Basic)"
+              data-cert-issuer="HackerRank"
+              data-cert-level="Certified"
+              data-cert-verify="https://www.hackerrank.com/certificates/"
+              data-cert-icon="hr">
+              <div class="cert-card__icon cert-card__icon--hr"><i class="bx bxl-python"></i></div>
+              <div class="cert-card__body">
+                <span class="cert-card__issuer">HackerRank</span>
+                <h4>Python Basic</h4>
+                <span class="cert-card__level"><i class="bx bx-check-circle"></i> Certified</span>
+              </div>
+              <div class="cert-card__cta"><i class="bx bx-show"></i> View</div>
+            </div>
+
+            <div class="cert-card card" data-reveal="up" style="--d:0.15s"
+              data-cert-title="Node.js (Intermediate)"
+              data-cert-issuer="HackerRank"
+              data-cert-level="Certified"
+              data-cert-verify="https://www.hackerrank.com/certificates/"
+              data-cert-icon="hr">
+              <div class="cert-card__icon cert-card__icon--hr"><i class="bx bxl-nodejs"></i></div>
+              <div class="cert-card__body">
+                <span class="cert-card__issuer">HackerRank</span>
+                <h4>Node.js Intermediate</h4>
+                <span class="cert-card__level"><i class="bx bx-check-circle"></i> Certified</span>
+              </div>
+              <div class="cert-card__cta"><i class="bx bx-show"></i> View</div>
+            </div>
+
+            <div class="cert-card card" data-reveal="up" style="--d:0.2s"
+              data-cert-title="SQL (Basic)"
+              data-cert-issuer="HackerRank"
+              data-cert-level="Certified"
+              data-cert-verify="https://www.hackerrank.com/certificates/"
+              data-cert-icon="hr">
+              <div class="cert-card__icon cert-card__icon--hr"><i class="bx bx-server"></i></div>
+              <div class="cert-card__body">
+                <span class="cert-card__issuer">HackerRank</span>
+                <h4>SQL Basic</h4>
+                <span class="cert-card__level"><i class="bx bx-check-circle"></i> Certified</span>
+              </div>
+              <div class="cert-card__cta"><i class="bx bx-show"></i> View</div>
+            </div>
+
+            <div class="cert-card card" data-reveal="up" style="--d:0.25s"
+              data-cert-title="CSS (Basic)"
+              data-cert-issuer="HackerRank"
+              data-cert-level="Certified"
+              data-cert-verify="https://www.hackerrank.com/certificates/"
+              data-cert-icon="hr">
+              <div class="cert-card__icon cert-card__icon--hr"><i class="bx bxl-css3"></i></div>
+              <div class="cert-card__body">
+                <span class="cert-card__issuer">HackerRank</span>
+                <h4>CSS Basic</h4>
+                <span class="cert-card__level"><i class="bx bx-check-circle"></i> Certified</span>
+              </div>
+              <div class="cert-card__cta"><i class="bx bx-show"></i> View</div>
+            </div>
+
+            <div class="cert-card card" data-reveal="up" style="--d:0.3s"
+              data-cert-title="Python Basics"
+              data-cert-issuer="Udemy"
+              data-cert-level="Completed"
+              data-cert-icon="udemy">
+              <div class="cert-card__icon cert-card__icon--udemy"><i class="bx bxl-python"></i></div>
+              <div class="cert-card__body">
+                <span class="cert-card__issuer">Udemy</span>
+                <h4>Python Basics</h4>
+                <span class="cert-card__level"><i class="bx bx-check-circle"></i> Completed</span>
+              </div>
+              <div class="cert-card__cta"><i class="bx bx-show"></i> View</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CERTIFICATE MODAL -->
+      <div class="modal-overlay" id="cert-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+        <div class="modal-box">
+          <button class="modal-close" id="modal-close" aria-label="Close"><i class="bx bx-x"></i></button>
+          <div class="modal-header">
+            <div class="modal-icon" id="modal-icon"></div>
+            <div>
+              <span class="modal-issuer" id="modal-issuer"></span>
+              <h3 class="modal-title" id="modal-title"></h3>
+              <span class="modal-level" id="modal-level"></span>
+            </div>
+          </div>
+          <div class="modal-preview" id="modal-preview"></div>
+          <div class="modal-actions" id="modal-actions"></div>
+        </div>
+      </div>
+
+      <!-- ═══════════════════════════ GITHUB ═══════════════════════════ -->
+      <section class="section github" id="github">
+        <div class="bd-grid">
+          <div class="section-header" data-reveal="up">
+            <span class="section-label">Open Source</span>
+            <h2 class="section-title">GitHub</h2>
+          </div>
+
+          <div class="github-card card" data-reveal="up">
+            <div class="github-card__left">
+              <div class="github-card__avatar"><i class="bx bxl-github"></i></div>
+              <h3>Shreyash1106</h3>
+              <p>Python · Backend · Open to Collaboration</p>
+              <a href="https://github.com/Shreyash1106" target="_blank" rel="noreferrer" class="btn btn--primary btn--sm">
+                <i class="bx bxl-github"></i> View Profile
+              </a>
+            </div>
+            <div class="github-card__right">
+              <div class="github-stat">
+                <div class="github-stat__icon"><i class="bx bxl-python"></i></div>
+                <div><strong>Primary Language</strong><p>Python — Backend systems & APIs</p></div>
+              </div>
+              <div class="github-stat">
+                <div class="github-stat__icon"><i class="bx bx-code-alt"></i></div>
+                <div><strong>Backend Stack</strong><p>FastAPI · Flask · Node.js · REST APIs</p></div>
+              </div>
+              <div class="github-stat">
+                <div class="github-stat__icon"><i class="bx bx-data"></i></div>
+                <div><strong>Database Experience</strong><p>PostgreSQL · MySQL · SQL</p></div>
+              </div>
+              <div class="github-stat">
+                <div class="github-stat__icon"><i class="bx bx-git-branch"></i></div>
+                <div><strong>Version Control</strong><p>Git workflows · GitHub · Collaboration</p></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══════════════════════════ CONTACT ═══════════════════════════ -->
+      <section class="section contact" id="contact">
+        <div class="bd-grid">
+          <div class="section-header" data-reveal="up">
+            <span class="section-label">Let's Connect</span>
+            <h2 class="section-title">Get In Touch</h2>
+            <p class="section-sub">Open to backend roles, internships, freelance projects, and collaborations.</p>
+          </div>
+
+          <div class="contact__grid">
+            <div class="contact__info card" data-reveal="left">
+              <h3>Ready to Work Together?</h3>
+              <p>Whether you're hiring a backend developer, building a product, or want to collaborate — I'd love to connect.</p>
+              <div class="contact__links">
+                <a href="mailto:shreyashd429@gmail.com" class="contact__link">
+                  <div class="contact__link-icon"><i class="bx bx-envelope"></i></div>
+                  <div><span>Email</span><strong>shreyashd429@gmail.com</strong></div>
+                </a>
+                <a href="tel:+917498539668" class="contact__link">
+                  <div class="contact__link-icon"><i class="bx bx-phone"></i></div>
+                  <div><span>Phone</span><strong>+91 74985 39668</strong></div>
+                </a>
+                <a href="https://www.linkedin.com/in/shreyash-dandekar-19387a321" target="_blank" rel="noreferrer" class="contact__link">
+                  <div class="contact__link-icon"><i class="bx bxl-linkedin"></i></div>
+                  <div><span>LinkedIn</span><strong>shreyash-dandekar</strong></div>
+                </a>
+                <a href="https://github.com/Shreyash1106" target="_blank" rel="noreferrer" class="contact__link">
+                  <div class="contact__link-icon"><i class="bx bxl-github"></i></div>
+                  <div><span>GitHub</span><strong>Shreyash1106</strong></div>
+                </a>
+              </div>
+            </div>
+
+            <form class="contact__form card" id="contact-form" novalidate data-reveal="right">
+              <div class="form-row">
+                <div class="form-field">
+                  <label for="name">Full Name</label>
+                  <input type="text" id="name" name="name" placeholder="Your full name" required autocomplete="name" />
+                  <span class="form-err" id="err-name"></span>
+                </div>
+                <div class="form-field">
+                  <label for="email">Email Address</label>
+                  <input type="email" id="email" name="email" placeholder="your@email.com" required autocomplete="email" />
+                  <span class="form-err" id="err-email"></span>
+                </div>
+              </div>
+              <div class="form-field">
+                <label for="subject">Subject</label>
+                <input type="text" id="subject" name="subject" placeholder="e.g. Backend Developer Role / Project Collaboration" required />
+                <span class="form-err" id="err-subject"></span>
+              </div>
+              <div class="form-field">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="5" placeholder="Tell me about your project, opportunity, or what you're looking for..." required></textarea>
+                <span class="form-err" id="err-message"></span>
+              </div>
+              <button type="submit" class="btn btn--primary btn--full" id="submit-btn">
+                <i class="bx bx-send"></i> Send Message
+              </button>
+              <div class="form-status" id="form-status"></div>
+            </form>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="footer__inner bd-grid">
+        <div class="footer__brand">
+          <span class="footer__logo-mark">S</span>
+          <div>
+            <p class="footer__name">Shreyash Dandekar</p>
+            <p class="footer__tagline">Python · Backend Developer</p>
+          </div>
+        </div>
+        <div class="footer__nav">
+          <a href="#about">About</a>
+          <a href="#experience">Experience</a>
+          <a href="#projects">Projects</a>
+          <a href="#skills">Skills</a>
+          <a href="#certifications">Certifications</a>
+          <a href="#contact">Contact</a>
+        </div>
+        <div class="footer__social">
+          <a href="https://github.com/Shreyash1106" target="_blank" rel="noreferrer" aria-label="GitHub"><i class="bx bxl-github"></i></a>
+          <a href="https://www.linkedin.com/in/shreyash-dandekar-19387a321" target="_blank" rel="noreferrer" aria-label="LinkedIn"><i class="bx bxl-linkedin"></i></a>
+          <a href="mailto:shreyashd429@gmail.com" aria-label="Email"><i class="bx bx-envelope"></i></a>
+          <a href="tel:+917498539668" aria-label="Phone"><i class="bx bx-phone"></i></a>
+        </div>
+        <p class="footer__copy">© 2026 Shreyash Dandekar. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <button class="back-top" id="back-top" aria-label="Back to top">
+      <i class="bx bx-chevron-up"></i>
+    </button>
+
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script src="assets/js/main.js"></script>
+  </body>
 </html>
